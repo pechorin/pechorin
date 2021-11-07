@@ -1,0 +1,10 @@
+FROM nginx:mainline-alpine
+
+COPY ./nginx/nginx.conf /etc/nginx/
+COPY ./nginx/pechorin.dev.conf /etc/nginx/conf.d/
+
+RUN mkdir -p /var/cert/
+COPY --chown=nginx:nginx ./cert/* /var/cert/
+RUN chmod -R 500 /var/cert
+
+RUN rm -f /etc/nginx/conf.d/default.conf
