@@ -2,7 +2,6 @@
 title: Стэк JSON логирования в Ruby | Rails приложениях — мой боевой набор
 date: 2021-09-03
 created_at: 2021-09-03 02:55 +03:00
-tags: [ruby, elasticsearch, indexing]
 taxonomy:
   category:
     - research & development
