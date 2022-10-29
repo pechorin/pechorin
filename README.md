@@ -1,10 +1,10 @@
-### Pechorin, another developer profile 😎
+### Hello devs, i'm Pechorin Andrey and this is another developer profile 😎
 
-I am not alone, for sure!
+We are not alone, for sure!
 
-### Fav tools for now
+### Fav tools and areas for now
 
-- Ruby / Go / Rust / VimScript / Bash
+- Ruby / Go / Rust / Vimscript / Bash / Linux / Networks
 - Nvim / Obsidian
 
 ### Some notes
