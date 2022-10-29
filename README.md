@@ -1,6 +1,11 @@
-### Another developer profile
+### Pechorin, another developer profile 😎
 
-We are not alone, yeah!
+I am not alone, for sure!
+
+### Fav tools for now
+
+- Ruby / Go / Rust / VimScript / Bash
+- Nvim / Obsidian
 
 ### Some notes
 
