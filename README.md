@@ -9,9 +9,9 @@ We are not alone, for sure!
 
 ### Working on
 
-- (os) [any-jump.vim](https://github.com/pechorin/any-jump.vim) - jump to any definition plugin for vim and nvim
-- (os) [vim-files](https://github.com/pechorin/vim-files) - just another dotfiles for vim
-- rockethumans org
+- [u-keymapper.vim](https://github.com/pechorin/u-keymapper.vim) - universal keymapper for vim and nvim
+- [any-jump.vim](https://github.com/pechorin/any-jump.vim) - jump to any definition plugin for vim and nvim
+- [vim-files](https://github.com/pechorin/vim-files) - just another dotfiles for vim
 
 ### Little dev researches
 
