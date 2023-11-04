@@ -1,4 +1,9 @@
+.DS_Store
 tags
 .env
 /cert
-.DS_Store
+pbr.secrets/
+node_modules
+.parcel-cache
+build
+build_production
