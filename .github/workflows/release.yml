@@ -45,6 +45,7 @@ jobs:
         TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
         TELEGRAM_CHANNEL_ID: ${{ vars.TELEGRAM_CHANNEL_ID }}
         TELEGRAM_CHANNEL_URL: ${{ vars.TELEGRAM_CHANNEL_URL }}
+        PATH_PREFIX: ${{ github.event.repository.name }}
         ONLY_POSTS_WITH_TAGS: ${{ vars.ONLY_POSTS_WITH_TAGS }}
 
     - name: Setup Pages

@@ -4,6 +4,7 @@ const pluginRss = require("@11ty/eleventy-plugin-rss")
 const pluginNavigation = require("@11ty/eleventy-navigation")
 const pluginIcons = require('eleventy-plugin-icons')
 
+const config = require('./lib/config')
 const markdownLibrary = require("./lib/markdown_config")
 const filters = require('./lib/filters')
 
@@ -62,6 +63,8 @@ module.exports = function(eleventyConfig) {
     ghostMode: false
   })
 
+  eleventyConfig.addGlobalData("path_prefix", config.pathPrefix)
+
   return {
     templateFormats: [
       "md",
@@ -73,7 +76,7 @@ module.exports = function(eleventyConfig) {
     htmlTemplateEngine: "njk",
     dataTemplateEngine: false,
 
-    pathPrefix: "pechorin",
+    pathPrefix: config.pathPrefix,
 
     // passthroughFileCopy: true,
 
