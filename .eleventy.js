@@ -73,6 +73,8 @@ module.exports = function(eleventyConfig) {
     htmlTemplateEngine: "njk",
     dataTemplateEngine: false,
 
+    pathPrefix: "pechorin",
+
     // passthroughFileCopy: true,
 
     dir: {
