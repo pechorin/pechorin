@@ -1,0 +1,39 @@
+<div class='telegram'>
+  <h2>
+    <span class='second-line'>
+      {% icon "custom:telegram" %}
+      {% if telegram.channelUrl %}
+        <a href="{{ telegram.channelUrl }}">{{ telegram.channelUrl }}</a>
+      {% endif %}
+    </span>
+  </h2>
+
+  {% set postsList = telegram.posts | head(-5) %}
+
+  <div class='wrapper'>
+    {% for post in postsList %}
+      <div class='post'>
+        <div class='date'>{{ post.date }}</div>
+      </div>
+
+      <div class='content'>
+        {{ post.text | safe }}
+      </div>
+
+      {% if telegram.channelUrl %}
+      <div class='read-more-wrapper'>
+        →
+        <a class='read-more' href="{{ telegram.channelUrl }}/{{post.id}}">
+          {{ telegram.channelUrl }}/{{ post.id }}
+        </a>
+      </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <!--
+  {% if telegram.channelUrl %}
+    <a class='all-posts' href="{{ telegram.channelUrl }}">Все телеграмные заметки →</a>
+  {% endif %}
+  -->
+</div>

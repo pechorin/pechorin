@@ -1,0 +1,6 @@
+#!/bin/bash
+
+set -e
+
+npm run prod
+s3cmd sync -c ./.s3cfg --delete-removed ./build/* s3://pechdev.ru

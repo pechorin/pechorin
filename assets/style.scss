@@ -1,0 +1,409 @@
+@import 'modularscale-sass/stylesheets/modularscale';
+@import '~/node_modules/purecss/build/grids-core.css';
+@import '~/node_modules/purecss/build/grids.css';
+@import '~/node_modules/purecss/build/grids-responsive.css';
+
+$modularscale: (
+  base: 16px,
+  ratio: 1.2
+);
+
+$size_sm: 35.5em;
+$size_md: 48em;
+$size_lg: 64em;
+$size_xl: 80em;
+
+@mixin respond-to($media) {
+  @if $media == small {
+    @media only screen and (max-width: $size_sm) { @content; }
+  }
+
+  @if $media == medium {
+    @media only screen and (min-width: $size_sm) and (max-width: $size-lg) { @content; }
+  }
+
+  @if $media == large {
+    @media only screen and (min-width: $size_lg) { @content; }
+  }
+
+  @if $media == medium-and-large {
+    @media only screen and (min-width: $size_md) { @content; }
+  }
+
+  @if $media == small-and-medium {
+    @media only screen and (max-width: $size-lg) { @content; }
+  }
+}
+
+:root {
+  --font-primary: 'Roboto', sans-serif;
+  --font-monospaced: Monaco, Menlo, Consolas, monospaced;
+
+  --color-bg: #F5F5F5;
+  --color-container: #FFFFFF;
+  --color-url: #595959;
+  --color-url-hover: #454545;
+  --color-description: #6A6A6A;
+  --color-reposity: #EDEDED;
+  --color-reposity-tags: #707070;
+  --color-telegram-posts: #3F3F3F;
+  --color-post-date: #999999;
+  --color-code: #627962;
+}
+
+body {
+  background-color: var(--color-bg);
+  font-family: var(--font-primary);
+}
+
+a {
+  color: var(--color-url);
+
+  &:hover {
+    color: var(--color-url-hover);
+  }
+}
+
+h2 {
+  font-size: ms(3);
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: ms(0) ms(10);
+  background-color: var(--color-container);
+
+  @include respond-to(small-and-medium) {
+    padding: ms(0) ms(2);
+  }
+}
+
+.icon {
+  max-width: ms(4);
+}
+
+.site-title {
+  font-size: ms(4);
+  font-weight: bold;
+  font-family: var(--font-secondary);
+}
+
+.site-description {
+  color: var(--color-description);
+  font-size: ms(1);
+  font-weight: 300;
+}
+
+ul.social-links {
+  padding: 0;
+  margin: 0;
+  margin-top: ms(2);
+
+  li {
+    margin-right: ms(-4);
+    display: inline;
+    list-style: none;
+
+    .cv {
+      display: inline-flex;
+      align-items: center;
+
+      .icon {
+        width: 50px;
+      }
+    }
+  }
+}
+
+.repositories {
+  margin-top: ms(8);
+
+  h2 {
+    margin-bottom: 0;
+  }
+
+  .description {
+    margin-top: ms(-2);
+    margin-bottom: ms(0);
+    font-weight: 300;
+  }
+
+  .wrapper {
+    box-sizing: border-box;
+
+    &:nth-child(odd) {
+      padding-right: ms(1);
+
+      @include respond-to(small-and-medium) {
+        padding-right: 0;
+      }
+    }
+  }
+
+  .repository {
+    margin-top: ms(-4);
+    padding: ms(0);
+    background-color: var(--color-reposity);
+
+    .name {
+      font-weight: bold;
+      font-size: ms(1);
+    }
+
+    .stars {
+      font-weight: bold;
+
+      @include respond-to(small) {
+        margin-top: ms(-2);
+      }
+    }
+
+    .description {
+      margin-top: ms(2);
+    }
+
+    .tags ul {
+      padding: 0;
+      margin: 0;
+    }
+
+    .tags li {
+      font-size: ms(-1);
+      padding-right: ms(0);
+      list-style: none;
+      display: inline-block;
+      color: var(--color-reposity-tags);
+    }
+  }
+}
+
+.jobs {
+  margin-top: ms(8);
+  padding: 0 ms(5) 0 ms(0);
+
+  .wrapper {}
+
+  .all-jobs {
+    display: block;
+    margin-top: ms(2);
+  }
+
+  .job:not(:first-child) {
+    margin-top: ms(2);
+  }
+
+  .company {
+    font-size: ms(1);
+    font-weight: bold;
+  }
+
+  .position {
+    margin-top: ms(-5);
+  }
+  .years {
+    font-weight: 300;
+  }
+}
+
+.latest-posts {
+  .all-posts {
+    display: block;
+    margin-top: ms(5);
+  }
+
+  ul, ol {
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  .date {
+    display: block;
+    font-weight: 300;
+    color: var(--color-post-date);
+  }
+
+  .title {
+    display: block;
+    margin-top: ms(-5);
+  }
+
+  .post {
+    &:not(:first-child) {
+      margin-top: ms(5);
+    }
+  }
+}
+
+.index-page-posts {
+  .latest-posts {
+    margin-top: ms(8);
+    padding: 0 ms(0);
+  }
+}
+
+.archive-page-posts {
+  .latest-posts {
+  }
+}
+
+.telegram {
+  margin-top: ms(8);
+
+  h2 {
+    font-weight: 300;
+
+    .second-line {
+      display: flex;
+      margin-top: ms(-4);
+      font-weight: bold;
+    }
+
+    .icon {
+      margin-right: ms(-3);
+    }
+  }
+
+  .all-posts {
+    margin-top: ms(5);
+    display: block;
+  }
+
+  .wrapper {
+    margin-top: ms(5);
+  }
+
+
+  .date {
+    font-weight: bold;
+  }
+
+  .content {
+    margin-top: ms(1);
+    padding-right: ms(7);
+    color: var(--color-telegram-posts);
+    overflow: scroll;
+  }
+
+  .post:not(:first-child) {
+    margin-top: ms(6);
+  }
+
+  .read-more-wrapper {
+    margin-top: ms(0);
+  }
+}
+
+content.post {
+  h2 {
+    font-size: ms(5);
+  }
+
+  h3 {
+    font-size: ms(3);
+  }
+
+  h4 {
+    font-size: ms(2);
+  }
+
+  h5, h6 {
+    font-size: ms(1);
+  }
+
+  h2, h3, h4, h5, h6 {
+    margin-top: ms(6);
+  }
+
+  time {
+    color: var(--color-post-date);
+  }
+
+  .tags {
+    a {
+      margin-right: ms(-5);
+      font-weight: 300;
+    }
+  }
+
+  .post-body {
+    // font-size: ms(1);
+    color: var(--color-telegram-posts);
+  }
+
+  code {
+    color: var(--color-code);
+    font-family: var(--font-monospaced);
+  }
+}
+
+footer {
+  margin-top: ms(5);
+  color: var(--color-post-date);
+}
+
+// hightlight theme
+pre .hll { background-color: #ffffcc }
+pre .c { color: #aaaaaa; font-style: italic } /* Comment */
+pre .err { color: #F00000; background-color: #F0A0A0 } /* Error */
+pre .k { color: #0000aa } /* Keyword */
+pre .cm { color: #aaaaaa; font-style: italic } /* Comment.Multiline */
+pre .cp { color: #4c8317 } /* Comment.Preproc */
+pre .c1 { color: #aaaaaa; font-style: italic } /* Comment.Single */
+pre .cs { color: #0000aa; font-style: italic } /* Comment.Special */
+pre .gd { color: #aa0000 } /* Generic.Deleted */
+pre .ge { font-style: italic } /* Generic.Emph */
+pre .gr { color: #aa0000 } /* Generic.Error */
+pre .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+pre .gi { color: #00aa00 } /* Generic.Inserted */
+pre .go { color: #888888 } /* Generic.Output */
+pre .gp { color: #555555 } /* Generic.Prompt */
+pre .gs { font-weight: bold } /* Generic.Strong */
+pre .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+pre .gt { color: #aa0000 } /* Generic.Traceback */
+pre .kc { color: #0000aa } /* Keyword.Constant */
+pre .kd { color: #0000aa } /* Keyword.Declaration */
+pre .kn { color: #0000aa } /* Keyword.Namespace */
+pre .kp { color: #0000aa } /* Keyword.Pseudo */
+pre .kr { color: #0000aa } /* Keyword.Reserved */
+pre .kt { color: #00aaaa } /* Keyword.Type */
+pre .m { color: #009999 } /* Literal.Number */
+pre .s { color: #aa5500 } /* Literal.String */
+pre .na { color: #1e90ff } /* Name.Attribute */
+pre .nb { color: #00aaaa } /* Name.Builtin */
+pre .nc { color: #00aa00; text-decoration: underline } /* Name.Class */
+pre .no { color: #aa0000 } /* Name.Constant */
+pre .nd { color: #888888 } /* Name.Decorator */
+pre .ni { color: #800000; font-weight: bold } /* Name.Entity */
+pre .nf { color: #00aa00 } /* Name.Function */
+pre .nn { color: #00aaaa; text-decoration: underline } /* Name.Namespace */
+pre .nt { color: #1e90ff } /* Name.Tag */
+pre .nv { color: #aa0000 } /* Name.Variable */
+pre .ow { color: #0000aa } /* Operator.Word */
+pre .w { color: #bbbbbb } /* Text.Whitespace */
+pre .mf { color: #009999 } /* Literal.Number.Float */
+pre .mh { color: #009999 } /* Literal.Number.Hex */
+pre .mi { color: #009999 } /* Literal.Number.Integer */
+pre .mo { color: #009999 } /* Literal.Number.Oct */
+pre .sb { color: #aa5500 } /* Literal.String.Backtick */
+pre .sc { color: #aa5500 } /* Literal.String.Char */
+pre .sd { color: #aa5500 } /* Literal.String.Doc */
+pre .s2 { color: #aa5500 } /* Literal.String.Double */
+pre .se { color: #aa5500 } /* Literal.String.Escape */
+pre .sh { color: #aa5500 } /* Literal.String.Heredoc */
+pre .si { color: #aa5500 } /* Literal.String.Interpol */
+pre .sx { color: #aa5500 } /* Literal.String.Other */
+pre .sr { color: #009999 } /* Literal.String.Regex */
+pre .s1 { color: #aa5500 } /* Literal.String.Single */
+pre .ss { color: #0000aa } /* Literal.String.Symbol */
+pre .bp { color: #00aaaa } /* Name.Builtin.Pseudo */
+pre .vc { color: #aa0000 } /* Name.Variable.Class */
+pre .vg { color: #aa0000 } /* Name.Variable.Global */
+pre .vi { color: #aa0000 } /* Name.Variable.Instance */
+pre .il { color: #009999 } /* Literal.Number.Integer.Long */
+
+pre .lnt { color: silver; margin-right: ms(-4) }

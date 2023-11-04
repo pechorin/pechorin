@@ -1,0 +1,51 @@
+<div class='repositories'>
+  <h2>
+    {{ metadata.repositories.title | safe }}
+  </h2>
+  <div class='description'>
+    {{ metadata.repositories.description }}
+  </div>
+  <div class='pure-g'>
+    {% for repo in repositories %}
+      <div class='wrapper pure-u-lg-12-24 pure-u-1'>
+        <div class='repository pure-g'>
+
+          <!-- name -->
+          <div class='name pure-u-sm-20-24 pure-u-1'>
+            <a href="{{ repo.url }}">
+              {{ repo.name }}
+            </a>
+          </div>
+
+          <!-- stars (optional) -->
+          {% if repo.stars %}
+            <div class='stars pure-u-sm-4-24 pure-u-1'>
+              {{ repo.stars }}
+            </div>
+          {% endif %}
+
+          <!-- description -->
+          {% if repo.description %}
+            <div class='description pure-u-1'>
+              {{ repo.description }}
+            </div>
+          {% endif %}
+
+          <!-- tags (optional) -->
+          {% if repo.tags | length %}
+            <div class='tags pure-u-1'>
+              <ul>
+                {% for tag in repo.tags %}
+                  <li>
+                    {{ tag }}
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          {% endif %}
+
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>

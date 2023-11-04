@@ -1,0 +1,33 @@
+<div class='jobs'>
+  <h2>
+    {{ metadata.jobs.title }}
+  </h2>
+
+  <div class='wrapper'>
+    {% for job in jobs %}
+      <div class='job'>
+        <div class='company'>
+          {% if job.url %}
+            <a href="{{ job.url }}">{{ job.company }}</a>
+          {% else %}
+            {{ job.company }}
+          {% endif %}
+        </div>
+
+        <div class='pure-g'>
+          <div class='position pure-u-20-24'>
+            {{ job.position }}
+          </div>
+
+          <div class='years pure-u-4-24'>
+            {{ job.years }}
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+  <a href="" class='all-jobs'>
+    CV, все места работы →
+  </a>
+</div>

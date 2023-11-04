@@ -1,0 +1,7 @@
+<ul class='social-links'>
+  {% if metadata.social.github %}<li><a href="{{ metadata.social.github }}">{% icon "custom:github" %}</a></li>{% endif %}
+  {% if telegram.channelUrl %}<li><a href="{{ telegram.channelUrl }}">{% icon "custom:telegram" %}</a></li>{% endif %}
+  {% if metadata.social.twitter %}<li><a href="{{ metadata.social.twitter }}">{% icon "custom:twitter" %}</a></li>{% endif %}
+  {% if metadata.social.vk %}<li><a href="{{ metadata.social.vk }}">{% icon "custom:vk" %}</a></li>{% endif %}
+  {% if metadata.social.cv %}<li><a class="cv" href="{{ metadata.social.cv }}">{% icon "custom:readdotcv" %} CV</a></li>{% endif %}
+</ul>

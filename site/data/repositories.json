@@ -1,0 +1,27 @@
+[
+  {
+    "url": "http://github.com/pechorin/any-jump.vim",
+    "name": "any-jump.vim",
+    "stars": "1000+",
+    "description": "Jump to any definition and reference without ide overhead",
+    "tags": ["viml"]
+  },
+  {
+    "url": "http://github.com/pechorin/pbr.sh",
+    "name": "pbr.sh",
+    "description": "Provise, backup and restore system for docker based hosts",
+    "tags": ["archive", "experimental", "bash"]
+  },
+  {
+    "url": "https://github.com/pechorin/sync-repo-docs-to-notion",
+    "name": "sync-repo-docs-to-notion",
+    "description": "Sync repository markdown documentation to Notion",
+    "tags": ["javascript", "github-action"]
+  },
+  {
+    "url": "https://github.com/pechorin/u-keymapper.vim",
+    "name": "u-keymapper.vim",
+    "description": "Universal key mapper for vim and nvim",
+    "tags": ["viml"]
+  }
+]

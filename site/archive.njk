@@ -1,0 +1,15 @@
+---
+layout: page
+permalink: /posts/
+eleventyNavigation:
+  key: Посты
+  order: 2
+---
+
+
+{% set postslist = collections.posts %}
+{% set listTitle = "Архив всех лонгридов" %}
+
+<div class='archive-page-posts'>
+  {% include "latest_posts.njk" %}
+</div>

@@ -1,0 +1,23 @@
+---
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+  filter:
+    - all
+    - nav
+    - post
+    - posts
+    - tags
+  addAllPagesToCollections: true
+layout: page
+eleventyComputed:
+  title: Tagged “{{ tag }}”
+permalink: /tags/{{ tag | slug }}/
+---
+<h1>По тэгу “{{ tag }}”</h1>
+
+{% set postslist = collections[ tag ] %}
+{% include "latest_posts.njk" %}
+
+<p>See <a href="{{ '/tags/' | url }}">all tags</a>.</p>

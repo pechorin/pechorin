@@ -1,0 +1,25 @@
+[
+  {
+    "company": "rocketwork.ru",
+    "url": "https://rocketwork.ru",
+    "position": "Тим-лид на платформе для самозанятых",
+    "years": "2020+"
+  },
+  {
+    "company": "Рокетбанк",
+    "url": "https://rocketbank.ru",
+    "position": "Тим-лид фин.мониторинга",
+    "years": "2017-2020"
+  },
+  {
+    "company": "backly.ru",
+    "position": "Стартап-инженер в кешбэк сервисе",
+    "years": "2014-2017"
+  },
+  {
+    "company": "Купикупон",
+    "url": "https://kupikupon.ru",
+    "position": "Тим-лид в купонаторе",
+    "years": "2011-2012"
+  }
+]

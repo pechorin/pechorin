@@ -1,0 +1,52 @@
+{
+  "name": "pechorin.dev",
+  "version": "1.0.0",
+  "description": "home page",
+  "dejendencies": {},
+  "engines": {
+    "node": ">= 20.6.0"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.2-alpha.2",
+    "@11ty/eleventy-fetch": "^4.0.0",
+    "@11ty/eleventy-navigation": "^0.3.5",
+    "@11ty/eleventy-plugin-rss": "^1.2.0",
+    "@aws-sdk/client-s3": "^3.433.0",
+    "@parcel/transformer-sass": "^2.9.3",
+    "eleventy-plugin-icons": "^4.3.1",
+    "i": "^0.3.7",
+    "luxon": "^3.4.3",
+    "markdown-it": "^13.0.2",
+    "markdown-it-anchor": "^8.6.7",
+    "markdown-it-attrs": "^4.1.6",
+    "markdown-it-footnote": "^3.0.3",
+    "markdown-it-plantuml": "^1.4.1",
+    "markdown-it-prism": "^2.3.0",
+    "modularscale-sass": "^3.0.10",
+    "node-telegram-bot-api": "^0.63.0",
+    "npm": "^10.2.1",
+    "npm-run-all": "^4.1.5",
+    "parcel": "^2.9.3",
+    "prism-themes": "github:PrismJS/prism-themes",
+    "purecss": "^3.0.0",
+    "pygments-rouge-css": "^0.1.0",
+    "sass": "^1.69.0",
+    "simple-icons": "^9.19.0",
+    "slimbot": "^5.1.0"
+  },
+  "scripts": {
+    "parcel": "parcel assets/*",
+    "dev": "npm-run-all --parallel dev:*",
+    "dev:eleventy": "ELEVENTY_ENV=development eleventy --serve",
+    "dev:parcel": "parcel watch assets/* --no-cache --no-hmr --no-autoinstall --dist-dir build/assets",
+    "prod": "run-s prod:*",
+    "prod:eleventy": "ELEVENTY_ENV=production eleventy --output=./build",
+    "prod:parcel": "parcel build assets/* --no-cache --dist-dir build/assets"
+  },
+  "keywords": [],
+  "author": "pechorin andrey",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.3.1"
+  }
+}

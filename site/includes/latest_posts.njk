@@ -1,0 +1,29 @@
+<div class='latest-posts'>
+  {% set maxPosts = collections.posts.length | min(5) %}
+  {% set postsList = collections.posts | head(-5) %}
+  {% set postsListCounter = collections.posts | length %}
+
+  <h2>{{ listTitle }}</h2>
+
+  <ul reversed class="posts" style="counter-reset: start-from {{ (postsListCounter or postsList.length) + 1 }}">
+    {% for post in postsList | reverse %}
+      <li class="post{% if post.url == url %} active{% endif %}">
+        <time class="date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
+
+        <a href="{{ post.url | url }}" class="title">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a>
+        <!--
+        {% for tag in post.data.tags | withoutBlacklistedTags %}
+          {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
+          <a href="{{ tagUrl | url }}" class="tag">{{ tag }}</a>
+        {% endfor %}
+        -->
+      </li>
+    {% endfor %}
+  </ul>
+
+  {% if showAllPostsButton %}
+    {% if collections.posts.length > 5 %}
+      <a class='all-posts' href="{{ '/posts/' | url }}">Все заметки →</a>
+    {% endif %}
+  {% endif %}
+</div>
