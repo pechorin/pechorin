@@ -49,6 +49,7 @@ $size_xl: 80em;
   --color-telegram-posts: #3F3F3F;
   --color-post-date: #999999;
   --color-code: #627962;
+  --color-code-bg: #f8f8f8;
 }
 
 body {
@@ -66,6 +67,10 @@ a {
 
 h2 {
   font-size: ms(3);
+
+  @include respond-to(small) {
+    font-size: ms(2);
+  }
 }
 
 .container {
@@ -80,6 +85,7 @@ h2 {
 }
 
 .icon {
+  min-width: ms(3);
   max-width: ms(4);
 }
 
@@ -87,6 +93,10 @@ h2 {
   font-size: ms(4);
   font-weight: bold;
   font-family: var(--font-secondary);
+
+  @include respond-to(small) {
+    font-size: ms(1);
+  }
 }
 
 .site-description {
@@ -253,6 +263,7 @@ ul.social-links {
 
 .telegram {
   margin-top: ms(8);
+  padding: 0 ms(0);
 
   h2 {
     font-weight: 300;
@@ -301,22 +312,42 @@ ul.social-links {
 content.post {
   h2 {
     font-size: ms(5);
+
+    @include respond-to(small) {
+      font-size: ms(3);
+    }
   }
 
   h3 {
     font-size: ms(3);
+
+    @include respond-to(small) {
+      font-size: ms(2);
+    }
   }
 
   h4 {
     font-size: ms(2);
+
+    @include respond-to(small) {
+      font-size: ms(1);
+    }
   }
 
   h5, h6 {
     font-size: ms(1);
+
+    @include respond-to(small) {
+      font-size: ms(0);
+    }
   }
 
   h2, h3, h4, h5, h6 {
     margin-top: ms(6);
+
+    @include respond-to(small) {
+      margin-top: ms(4);
+    }
   }
 
   time {
@@ -333,11 +364,22 @@ content.post {
   .post-body {
     // font-size: ms(1);
     color: var(--color-telegram-posts);
+    overflow: scroll;
   }
 
-  code {
+  code, pre {
     color: var(--color-code);
     font-family: var(--font-monospaced);
+    font-size: ms(0);
+
+    @include respond-to(small) {
+      font-size: ms(-1);
+    }
+  }
+
+  pre {
+    background-color: var(--color-code-bg);
+    padding: ms(-3);
   }
 }
 
