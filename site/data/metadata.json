@@ -2,7 +2,7 @@
   "title": "/dev/home/pechorin.andrey",
   "url": "https://pechdev.ru",
   "language": "ru",
-  "description": "Это очередная домашняя страница обычного разработчика из России. Я увлекаюсь программированием с детства и надеюсь заниматься этим и дальше, а это всего лишь агрегация информации, которую я оставляю в глобальной сети.",
+  "description": "Это очередная домашняя страница обычного разраба из России; надеюсь нас не заменят роботы.",
   "feed": {
     "subtitle": "/dev/homepage/pechorin.andrey",
     "filename": "feed.xml",
@@ -19,8 +19,8 @@
     "url": "pechdev.ru"
   },
   "repositories": {
-    "title": "Проекты на <a href='https://github.com'>github.com/pechorin</a>",
-    "description": "Открыто, бесплатно и бесстыдно"
+    "title": "Проекты на <a href='https://github.com/pechorin'>github.com</a>",
+    "description": "Открытый исходный код"
   },
   "jobs": {
     "enabled": true,
