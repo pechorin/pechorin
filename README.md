@@ -5,7 +5,6 @@ We are not alone, for sure!
 ### Fav tools and areas for now
 
 - Ruby / Go / Lua / Vimscript / Bash 
-- Linux / Network
 - Nvim / Obsidian
 
 ### Working on
