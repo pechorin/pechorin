@@ -4,12 +4,13 @@ We are not alone, for sure!
 
 ### Fav tools and areas for now
 
-- Ruby / Go / Vimscript / Bash / Linux / Networks (i also have some js exp, but who cares)
+- Ruby / Go / Lua / Vimscript / Bash 
+- Linux / Network
 - Nvim / Obsidian
-
 
 ### Working on
 
+- [nvim-config-loader](https://github.com/pechorin/nvim-config-loader) - Setup all your Vim with a single Lua table!
 - [any-jump.vim](https://github.com/pechorin/any-jump.vim) - jump to any definition plugin for vim and nvim
 - [sync-repo-docs-to-notion](https://github.com/pechorin/sync-repo-docs-to-notion) - Sync repository .md documentation to Notion wiki
 - [u-keymapper.vim](https://github.com/pechorin/u-keymapper.vim) - universal keymapper for vim and nvim
