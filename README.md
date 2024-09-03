@@ -17,4 +17,5 @@ We are not alone, for sure!
 
 ### Research and education projects
 
+- [algorithms-drafts](https://github.com/pechorin/algorithms-drafts) - algorithms implementation in ruby
 - [pbr.sh](https://github.com/pechorin/pbr.sh) - provise, backup and restore tool for container environment and host databases on plain bash, for deep linux shell env education purpose project
