@@ -7,16 +7,29 @@
     "tags": ["viml"]
   },
   {
+    "url": "https://github.com/pechorin/sync-repo-docs-to-notion",
+    "name": "sync-repo-docs-to-notion",
+    "stars": "10+",
+    "description": "Sync repository markdown documentation to Notion",
+    "tags": ["javascript", "github-action"]
+  },
+  {
+    "url": "https://github.com/pechorin/algorithms-drafts",
+    "name": "algorithms-drafts",
+    "description": "Черновики моего бесконечного обучения алгоритмам",
+    "tags": ["research", "ruby"]
+  },
+  {
+    "url": "https://github.com/pechorin/nvim-config-loader",
+    "name": "nvim-config-loader",
+    "description": "Setup all your Vim with a single Lua table! ",
+    "tags": ["research", "lua"]
+  },
+  {
     "url": "http://github.com/pechorin/pbr.sh",
     "name": "pbr.sh",
     "description": "Provise, backup and restore system for docker based hosts",
-    "tags": ["archive", "experimental", "bash"]
-  },
-  {
-    "url": "https://github.com/pechorin/sync-repo-docs-to-notion",
-    "name": "sync-repo-docs-to-notion",
-    "description": "Sync repository markdown documentation to Notion",
-    "tags": ["javascript", "github-action"]
+    "tags": ["archive", "research", "bash"]
   },
   {
     "url": "https://github.com/pechorin/u-keymapper.vim",

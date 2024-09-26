@@ -1,7 +1,9 @@
-const telegram = require('../../lib/telegram.js')
+// disabled for now
 
-module.exports = function() {
-  return new Promise((resolve) => {
-    telegram.Run(resolve)
-  })
-}
+// const telegram = require('../../lib/telegram.js')
+
+// module.exports = function() {
+//   return new Promise((resolve) => {
+//     telegram.Run(resolve)
+//   })
+// }

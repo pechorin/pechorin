@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>{{ title or metadata.title }}</title>
-    <meta name="description" content="{{ description or metadata.description }}">
+    <meta name="description" content="{{ description or metadata.description | striptags }}">
 
     {% if path_prefix %}
       <link href="/{{ path_prefix }}/assets/style.css" rel="stylesheet">
@@ -57,7 +57,7 @@
             </h1>
 
             <div class='site-description'>
-              {{ metadata.description }}
+              {{ metadata.description | safe }}
             </div>
 
             {% include 'social_links.njk' %}

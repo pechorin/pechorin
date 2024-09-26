@@ -6,17 +6,21 @@ layout: application
 {% include 'repositories.njk' %}
 
 <div class='pure-g'>
+  {#
   <div class='pure-u-lg-12-24 pure-u-1'>
     {% include 'telegram.njk' %}
   </div>
+  #}
 
   <div class='pure-u-lg-12-24 pure-u-1'>
     <div class='pure-g'>
+      {#
       <div class='index-page-posts pure-u-1'>
         {% set listTitle = metadata.latest_posts.title %}
         {% set showAllPostsButton = true %}
         {% include 'latest_posts.njk' %}
       </div>
+      #}
       <div class='pure-u-1'>
         {% include 'jobs.njk' %}
       </div>

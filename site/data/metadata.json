@@ -2,7 +2,7 @@
   "title": "/dev/home/pechorin.andrey",
   "url": "https://pechdev.ru",
   "language": "ru",
-  "description": "Это очередная домашняя страница обычного разраба из России; надеюсь нас не заменят роботы.",
+  "description": "Привет! Меня зовут Андрей Печорин и это моя агрегационная домашняя страница. <br/> Много программирую и живу в России. Люблю семью, сына и вселенную. <br/>Не понимаю как ты здесь очутился ;)",
   "feed": {
     "subtitle": "/dev/homepage/pechorin.andrey",
     "filename": "feed.xml",
@@ -15,16 +15,16 @@
   },
   "author": {
     "name": "Pechorin Andrey",
-    "email": "i@pechdev.ru",
+    "email": "pechorin.andrey@yandex.ru",
     "url": "pechdev.ru"
   },
   "repositories": {
     "title": "Проекты на <a href='https://github.com/pechorin'>github.com</a>",
-    "description": "Открытый исходный код"
+    "description": "Программирую для души <3"
   },
   "jobs": {
     "enabled": true,
-    "title": "Воркинг экспириенс"
+    "title": "Места работы:"
   },
   "latest_posts": {
     "enabled": true,
@@ -34,6 +34,7 @@
     "twitter": "https://twitter.com/vorobeypechorin",
     "github": "https://github.com/pechorin",
     "vk": "https://vk.com/easy_vk_address",
-    "cv": "https://career.habr.com/pechorinandey"
+    "cv": "https://career.habr.com/pechorinandey",
+    "mastodon": "https://mastodon.ml/@pechorin"
   }
 }

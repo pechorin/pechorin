@@ -27,7 +27,9 @@
     {% endfor %}
   </div>
 
-  <a href="" class='all-jobs'>
-    CV, все места работы →
-  </a>
+  {% if metadata.social.cv %}
+    <a href="{{ metadata.social.cv }}" class='all-jobs'>
+      CV, все места работы →
+    </a>
+  {% endif %}
 </div>
