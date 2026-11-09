@@ -1,0 +1,24 @@
+name: Deploy pechdev.ru
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+concurrency:
+  group: pechdev-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: forgejo.ref == 'refs/heads/master'
+    runs-on: vorobey-cloud-1
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+      - name: Build site
+        run: ./bin/build
+        env:
+          PATH_PREFIX: ""
+      - name: Publish release
+        run: ./bin/deploy

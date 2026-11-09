@@ -1,0 +1,61 @@
+#!/usr/bin/env node
+'use strict'
+
+// Publish an existing build. No sudo or Docker access is needed.
+const fs = require('node:fs')
+const path = require('node:path')
+const { execFileSync } = require('node:child_process')
+const project = path.resolve(__dirname, '..')
+const source = path.join(project, 'build')
+const root = path.resolve(process.env.DEPLOY_ROOT || '/srv/pechdev.ru')
+const releases = path.join(root, 'releases')
+const lock = path.join(root, '.deploy-lock')
+const current = path.join(root, 'current')
+let release
+let pending
+
+function validate(directory) {
+  for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
+    const file = path.join(directory, entry.name)
+    if (entry.isDirectory()) validate(file)
+    else if (!entry.isFile()) throw new Error(`Unsupported build entry: ${file}`)
+  }
+}
+
+function readable(directory) {
+  fs.chmodSync(directory, 0o755)
+  for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
+    const file = path.join(directory, entry.name)
+    if (entry.isDirectory()) readable(file)
+    else fs.chmodSync(file, 0o644)
+  }
+}
+
+try {
+  if (!fs.statSync(path.join(source, 'index.html')).size) throw new Error('Empty build/index.html')
+  validate(source)
+  const sha = execFileSync('git', ['rev-parse', 'HEAD'], { cwd: project, encoding: 'utf8' }).trim()
+  if (!fs.statSync(releases).isDirectory()) throw new Error(`Missing ${releases}`)
+  // Fail instead of racing another deploy. Remove a stale lock only after checking the runner.
+  fs.mkdirSync(lock)
+  try {
+    if (fs.existsSync(current) && !fs.lstatSync(current).isSymbolicLink()) {
+      throw new Error('current must be a symlink')
+    }
+    release = fs.mkdtempSync(path.join(releases, `${sha}-`))
+    fs.cpSync(source, release, { recursive: true })
+    readable(release)
+    pending = path.join(root, `.current-${path.basename(release)}`)
+    fs.symlinkSync(path.relative(root, release), pending)
+    fs.renameSync(pending, current)
+    console.log(`Published ${path.basename(release)}`)
+    release = undefined // Keep published releases for rollback.
+  } finally {
+    if (pending) fs.rmSync(pending, { force: true })
+    if (release) fs.rmSync(release, { recursive: true, force: true })
+    fs.rmdirSync(lock)
+  }
+} catch (error) {
+  console.error(`Deployment failed: ${error.message}`)
+  process.exitCode = 1
+}

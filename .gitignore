@@ -6,5 +6,5 @@ tags
 pbr.secrets/
 node_modules
 .parcel-cache
-build
+/build/
 build_production
