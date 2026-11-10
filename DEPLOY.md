@@ -29,8 +29,10 @@ S3 и Telegram отключены по умолчанию; workflow не пер�
 Это также применит домен `pechdev.ru` в Caddy и включит выпуск TLS-сертификата.
 Подробности — в `my-infra/git-server/README.md`.
 
-Существующий GitHub Pages workflow сохранён. Если он больше не нужен,
-отключите его в GitHub.
+GitHub Pages workflow временно отключён: файл сохранён как
+`.github/workflows/release.yml.disabled`. Чтобы включить его снова,
+переименуйте файл обратно в `release.yml` и отправьте изменение в GitHub.
+Деплой через Forgejo продолжает работать независимо.
 
 ## Скрипты
 
