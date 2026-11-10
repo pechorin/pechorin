@@ -1,51 +1,24 @@
-<div class='repositories'>
-  <h2>
-    {{ metadata.repositories.title | safe }}
-  </h2>
-  <div class='description'>
-    {{ metadata.repositories.description }}
-  </div>
-  <div class='pure-g'>
+<section class="repositories" aria-labelledby="projects-title">
+  <p class="section-label">01 / Проекты</p>
+  <h2 id="projects-title">{{ metadata.repositories.title | safe }}</h2>
+  <p class="section-description">{{ metadata.repositories.description }}</p>
+
+  <ul class="repository-list">
     {% for repo in repositories %}
-      <div class='wrapper pure-u-lg-12-24 pure-u-1'>
-        <div class='repository pure-g'>
-
-          <!-- name -->
-          <div class='name pure-u-sm-20-24 pure-u-1'>
-            <a href="{{ repo.url }}">
-              {{ repo.name }}
-            </a>
-          </div>
-
-          <!-- stars (optional) -->
+      <li class="repository">
+        <div class="repository-heading">
+          <h3 class="name"><a href="{{ repo.url }}">{{ repo.name }}</a></h3>
           {% if repo.stars %}
-            <div class='stars pure-u-sm-4-24 pure-u-1'>
-              {{ repo.stars }}
-            </div>
+            <span class="stars" aria-label="{{ repo.stars }} звёзд на GitHub">{{ repo.stars }}</span>
           {% endif %}
-
-          <!-- description -->
-          {% if repo.description %}
-            <div class='description pure-u-1'>
-              {{ repo.description }}
-            </div>
-          {% endif %}
-
-          <!-- tags (optional) -->
-          {% if repo.tags | length %}
-            <div class='tags pure-u-1'>
-              <ul>
-                {% for tag in repo.tags %}
-                  <li>
-                    {{ tag }}
-                  </li>
-                {% endfor %}
-              </ul>
-            </div>
-          {% endif %}
-
         </div>
-      </div>
+        {% if repo.description %}<p class="description">{{ repo.description }}</p>{% endif %}
+        {% if repo.tags | length %}
+          <ul class="tags" aria-label="Технологии">
+            {% for tag in repo.tags %}<li>{{ tag }}</li>{% endfor %}
+          </ul>
+        {% endif %}
+      </li>
     {% endfor %}
-  </div>
-</div>
+  </ul>
+</section>

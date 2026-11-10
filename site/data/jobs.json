@@ -1,9 +1,15 @@
 [
   {
-    "company": "rocketwork.ru",
+    "company": "Рокетворк",
+    "url": "https://rocketwork.ru",
+    "position": "CTO",
+    "years": "2025+"
+  },
+  {
+    "company": "Рокетворк",
     "url": "https://rocketwork.ru",
     "position": "Тим-лид на платформе для самозанятых",
-    "years": "2020+"
+    "years": "2020-2025"
   },
   {
     "company": "Рокетбанк",

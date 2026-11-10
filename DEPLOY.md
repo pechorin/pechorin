@@ -21,9 +21,13 @@ S3 и Telegram отключены по умолчанию; workflow не пер�
 Дополнительные настройки интеграций сохранены в `lib/config.js`.
 Без S3 ревизия равна `<MAJOR_VERSION>.0` (по умолчанию `0.0`), дата сборки — UTC.
 
-На сервере выполните `make prepare-pechdev-site` из `my-infra/vorobey-cloud-1`.
-После первого успешного workflow примените новую конфигурацию nginx по
-`my-infra/git-server/README.md`. До этого сайт продолжит обслуживать прежний образ.
+Перед первым workflow выполните локально `make prepare-pechdev-site` из
+`my-infra/vorobey-cloud-1`: команда создаст каталоги релизов на сервере.
+При установке нового раннера этот шаг уже входит в `make runner_install`.
+После первого успешного workflow выполните `make deploy-site` из
+`my-infra/git-server`, чтобы собрать, проверить и запустить nginx и Caddy.
+Это также применит домен `pechdev.ru` в Caddy и включит выпуск TLS-сертификата.
+Подробности — в `my-infra/git-server/README.md`.
 
 Существующий GitHub Pages workflow сохранён. Если он больше не нужен,
 отключите его в GitHub.
